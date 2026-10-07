@@ -1,0 +1,36 @@
+{
+  "name": "scopepay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"node --watch server/index.js\" \"vite --host 127.0.0.1\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "node --test tests/*.test.js",
+    "setup:ollama": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup-ollama.ps1",
+    "prepare:appwrite": "node scripts/prepare-appwrite.mjs",
+    "setup:appwrite-db": "node scripts/setup-appwrite-db.mjs"
+  },
+  "dependencies": {
+    "appwrite": "^28.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "node-appwrite": "^29.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "serverless-http": "^4.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "@playwright/test": "^1.51.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.1.0"
+  },
+  "overrides": {
+    "shell-quote": "^1.11.0"
+  }
+}
